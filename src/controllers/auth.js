@@ -54,7 +54,7 @@ export const signin = async(req,res)=>{
         return;
     }
 
-    const token = jwt.sign({userid : existUser._id}, "Bhargav0028");
+    const token = jwt.sign({userid : existUser._id}, process.env.JWT_KEY);
 
     res.status(200).json({token : token});    
 }
